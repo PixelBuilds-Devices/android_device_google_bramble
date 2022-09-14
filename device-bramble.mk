@@ -95,6 +95,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES_DEBUG += \
     crus_sp_cal
 
+# Bluetooth Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    bluetooth.hardware.power.operating_voltage_mv=3300
+
 # USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.bramble
