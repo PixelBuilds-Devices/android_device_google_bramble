@@ -40,4 +40,13 @@
     <!-- Location on the screen of the center of the physical volume up/down buttons. -->
     <dimen name="physical_volume_up_button_center_screen_location_y">915px</dimen>
     <dimen name="physical_volume_down_button_center_screen_location_y">1065px</dimen>
+
+    <!-- Height of quick settings tiles -->
+    <dimen name="qs_tile_height">74dp</dimen>
+
+    <!-- The height of the quick settings footer that holds the pagination dots and edit button -->
+    <dimen name="qs_footer_height">32dp</dimen>
+
+    <!-- Height of the media element in quick settings (portrait) -->
+    <dimen name="qs_media_session_height_expanded">166dp</dimen>
 </resources>
