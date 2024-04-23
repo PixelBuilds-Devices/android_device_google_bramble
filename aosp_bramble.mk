@@ -49,6 +49,11 @@ $(call inherit-product, device/google/bramble/device-bramble.mk)
 $(call inherit-product-if-exists, vendor/google_devices/bramble/proprietary/device-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/bramble/prebuilts/device-vendor-bramble.mk)
 
+# Inherit some common pb stuff.
+$(call inherit-product, vendor/pb/config/common_full_phone.mk)
+
+include device/google/bramble/device-custom.mk
+
 # Keep the VNDK APEX in /system partition for REL branches as these branches are
 # expected to have stable API/ABI surfaces.
 ifneq (REL,$(PLATFORM_VERSION_CODENAME))
@@ -62,7 +67,16 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 # PRODUCT_RESTRICT_VENDOR_FILES := all
 
 PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+PRODUCT_BRAND := google
 PRODUCT_NAME := aosp_bramble
 PRODUCT_DEVICE := bramble
-PRODUCT_MODEL := AOSP on bramble
+PRODUCT_MODEL := Pixel 4a (5G)
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2340
+TARGET_SCREEN_WIDTH := 1080
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=bramble
+
+$(call inherit-product, vendor/google/bramble/bramble-vendor.mk)
